@@ -11,4 +11,3 @@ Feature: BHF Advisor Login
     
     |username|password|
     |edwardjonestest2|metlife1|
-    |501|metlife1|
