@@ -42,11 +42,5 @@ public class BHFMetlifeLoginPage {
 		Thread.sleep(10000);
 	}
 	
-	//Method to verify login status.
-	
-	public void VerifyLoginStatus() {
-		
-		Assert.assertEquals(driver.getTitle(), "My Dashboard" , "Login Failed!");
-		System.out.println("Login Successful!");
-	}
 }
+

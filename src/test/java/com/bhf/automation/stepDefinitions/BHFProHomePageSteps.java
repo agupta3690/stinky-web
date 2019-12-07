@@ -1,8 +1,7 @@
 package com.bhf.automation.stepDefinitions;
 
 import com.bhf.automation.cucumber.TestContext;
-import com.bhf.automation.managers.PageObjectsManager;
-import com.bhf.automation.managers.WebDriverManager;
+import com.bhf.automation.objectRepository.BHFHeaderNavigation;
 import com.bhf.automation.objectRepository.BHFProHomePage;
 import com.cucumber.listener.Reporter;
 
@@ -13,11 +12,13 @@ public class BHFProHomePageSteps {
 	
 	TestContext testContext;
 	BHFProHomePage proHomePage;
+	BHFHeaderNavigation headerNavigation;
 	
 	public BHFProHomePageSteps(TestContext context) {
 		
 		testContext = context;
 		proHomePage = testContext.getPageObjectsManager().getBHFProHomePage();
+		headerNavigation = testContext.getPageObjectsManager().getBHFHeaderNavigation();
 	}
 	
 	
@@ -32,7 +33,7 @@ public class BHFProHomePageSteps {
 
 	@When("^User navigates to the Login page$")
 	public void User_navigates_to_the_Login_page() throws Throwable {
-		proHomePage.NavigateToLogin();
+		headerNavigation.NavigateToLogin();
 		Reporter.addStepLog("Clicked the Login link");
 	    
 	}

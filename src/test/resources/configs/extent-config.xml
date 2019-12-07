@@ -14,7 +14,7 @@
     <documentTitle>The Stinky Framework</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>The Stinky Report</reportName>
+    <reportName>Stinky Report</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>

@@ -1,8 +1,8 @@
 package com.bhf.automation.stepDefinitions;
 
 import com.bhf.automation.cucumber.TestContext;
+import com.bhf.automation.objectRepository.BHFHeaderNavigation;
 import com.bhf.automation.objectRepository.BHFMetlifeLoginPage;
-import com.bhf.automation.objectRepository.BHFProHomePage;
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.java.en.Then;
@@ -12,11 +12,13 @@ public class BHFMetlifeLoginPageSteps {
 
 	TestContext testContext;
 	BHFMetlifeLoginPage metlifeLoginPage;
+	BHFHeaderNavigation headerNavigation;
 
 	public BHFMetlifeLoginPageSteps(TestContext context) {
 
 		testContext = context;
 		metlifeLoginPage = testContext.getPageObjectsManager().getMetlifeLoginPage();
+		headerNavigation = testContext.getPageObjectsManager().getBHFHeaderNavigation();
 	}
 
 	@When("^User enters valid \\\"(.*)\\\" and \\\"(.*)\\\"$")
@@ -28,9 +30,8 @@ public class BHFMetlifeLoginPageSteps {
 
 	@Then("^User gets logged into his/her account successfully$")
 	public void User_gets_logged_into_his_her_account_successfully() throws Throwable {
-		metlifeLoginPage.VerifyLoginStatus();
-		Reporter.addStepLog("Verified that the user is logged in and navigated to the Dashboard page");
-		testContext.getWebDriverManager().closeDriver();
-
+		headerNavigation.VerifyLoginStatus();
+		Reporter.addStepLog("Verified that the user is logged in");
+	
 	}
 }

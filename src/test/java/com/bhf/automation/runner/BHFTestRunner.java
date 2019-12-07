@@ -15,7 +15,11 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = {"src/test/resources/functionalTests"},
 		glue={"com.bhf.automation.stepDefinitions"},
-		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:C:/Users/Arun Gupta/Argil DX LLC/Pulkit Jain - Reports/report.html"},
+		
+			//	target/cucumber-reports
+				
+			
 				monochrome = true
 		)
 

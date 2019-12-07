@@ -2,6 +2,7 @@ package com.bhf.automation.managers;
 
 import org.openqa.selenium.WebDriver;
 
+import com.bhf.automation.objectRepository.BHFHeaderNavigation;
 import com.bhf.automation.objectRepository.BHFMetlifeLoginPage;
 import com.bhf.automation.objectRepository.BHFProHomePage;
 import com.bhf.automation.objectRepository.BHFUserDashboard;
@@ -17,6 +18,8 @@ public class PageObjectsManager {
 
 	private BHFUserDashboard UserDashboard;
 
+	private BHFHeaderNavigation HeaderNavigation;
+
 
 
 	public PageObjectsManager(WebDriver driver) {
@@ -26,13 +29,11 @@ public class PageObjectsManager {
 	}
 
 
-
 	public BHFMetlifeLoginPage getMetlifeLoginPage(){
 
 		return (MetlifeLoginPage == null) ? MetlifeLoginPage = new BHFMetlifeLoginPage(driver) : MetlifeLoginPage;
 
 	}
-
 
 
 	public BHFProHomePage getBHFProHomePage() {
@@ -46,6 +47,12 @@ public class PageObjectsManager {
 	public BHFUserDashboard getBHFUserDashboard() {
 
 		return (UserDashboard == null) ? UserDashboard = new BHFUserDashboard(driver) : UserDashboard;
+
+	}
+
+	public BHFHeaderNavigation getBHFHeaderNavigation() {
+
+		return (HeaderNavigation == null) ? HeaderNavigation = new BHFHeaderNavigation(driver) : HeaderNavigation;
 
 	}
 

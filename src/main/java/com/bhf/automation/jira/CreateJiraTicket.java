@@ -1,7 +1,5 @@
 package com.bhf.automation.jira;
-
 import org.testng.ITestResult;
-
 import net.rcarz.jiraclient.BasicCredentials;
 import net.rcarz.jiraclient.Field;
 import net.rcarz.jiraclient.Issue;
