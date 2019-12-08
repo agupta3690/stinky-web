@@ -28,7 +28,7 @@ public class Hooks {
 		testContext = context;
 	}
 	
-	@Before("@InvokeBrowser")
+	@Before
 	public void SetUp() {
 
 		//testContext.getWebDriverManager().getDriver();

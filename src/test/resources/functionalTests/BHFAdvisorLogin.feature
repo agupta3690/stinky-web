@@ -1,6 +1,6 @@
 Feature: BHF Advisor Login
 
-  @InvokeBrowser
+  
   Scenario Outline: Successful login with valid credentials
     Given User is on BHF Advisor homepage
     When User navigates to the Login page
