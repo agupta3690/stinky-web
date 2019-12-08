@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 import com.bhf.automation.enums.DriverType;
@@ -32,7 +34,7 @@ public class ConfigFileReader {
 			throw new RuntimeException("configuration.properties not found at " + propertyFilePath);
 		}		
 	}
-	
+
 	public String getReportConfigPath(){
 		String reportConfigPath = properties.getProperty("reportConfigPath");
 		if(reportConfigPath!= null) return reportConfigPath;
@@ -56,26 +58,35 @@ public class ConfigFileReader {
 		if(url != null) return url;
 		else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
-	
-	public DriverType getBrowser() {
-		 String browserName = properties.getProperty("browser");
-		 if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
-		 else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
-		 else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
-		 else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
-		 }
-	
-	public EnvironmentType getEnvironment() {
-		 String environmentName = properties.getProperty("environment");
-		 if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
-		 else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
-		 else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
-		 }
-	
-	public Boolean getBrowserWindowSize() {
-		 String windowSize = properties.getProperty("windowMaximize");
-		 if(windowSize != null) return Boolean.valueOf(windowSize);
-		 return true;
-		 }
 
-}
+	public String getTimeStamp() {
+
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("MM_dd_yyyy h_mm_ss a");
+		String Date = sdf.format(date);
+		String formattedDate = Date.replaceAll(" ", "_");
+		return formattedDate;
+	}
+
+		public DriverType getBrowser() {
+			String browserName = properties.getProperty("browser");
+			if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
+			else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
+			else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
+			else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
+		}
+
+		public EnvironmentType getEnvironment() {
+			String environmentName = properties.getProperty("environment");
+			if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
+			else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
+			else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
+		}
+
+		public Boolean getBrowserWindowSize() {
+			String windowSize = properties.getProperty("windowMaximize");
+			if(windowSize != null) return Boolean.valueOf(windowSize);
+			return true;
+		}
+
+	}

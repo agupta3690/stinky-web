@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import com.bhf.automation.dataProvider.ConfigFileReader;
 
+
 public class BHFHeaderNavigation {
 
 	WebDriver driver;
@@ -64,7 +65,10 @@ public class BHFHeaderNavigation {
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("logoff"), "Logout Failed");
 		System.out.println("Logout Successful!");
+		
+		
 	}
 
+	
 
 }

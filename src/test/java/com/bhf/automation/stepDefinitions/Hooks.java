@@ -20,6 +20,8 @@ import cucumber.api.java.Before;
 public class Hooks {
 
 	TestContext testContext;
+	ConfigFileReader configFileReader = new ConfigFileReader();
+
 	
 	public Hooks(TestContext context) {
 		
@@ -32,6 +34,9 @@ public class Hooks {
 		//testContext.getWebDriverManager().getDriver();
 		
 		System.out.println("This is the before hook");
+		
+		
+		
 
 	}
 
@@ -47,9 +52,11 @@ public class Hooks {
 	 
 	 //Building up the destination path for the screenshot to save
 	 //Also make sure to create a folder 'screenshots' with in the cucumber-report folder
-	 File destinationPath = new File(System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/" + screenshotName + ".png");
+	 File destinationPath = new File("C:/Users/Arun Gupta/Argil DX LLC/Pulkit Jain - Reports/Screenshots/"+screenshotName+"_"+configFileReader.getTimeStamp()+".png");
 	 
-	 	 
+	 //System.getProperty("user.dir")
+	 
+	 
 	 //Copy taken screenshot from source location to destination location
 	 Files.copy(sourcePath, destinationPath);   
 	 
