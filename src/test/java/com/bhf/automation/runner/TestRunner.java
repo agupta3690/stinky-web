@@ -28,7 +28,7 @@ import cucumber.api.junit.Cucumber;
 				monochrome = true
 		)
 
-public class BHFTestRunner{
+public class TestRunner{
 
 	static ConfigFileReader configFileReader = new ConfigFileReader();
 	
