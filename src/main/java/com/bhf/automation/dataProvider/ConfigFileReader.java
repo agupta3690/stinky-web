@@ -62,7 +62,7 @@ public class ConfigFileReader {
 	public String getTimeStamp() {
 
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("MM_dd_yyyy h_mm_ss a");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM_dd_yyyy hh_mm");
 		String Date = sdf.format(date);
 		String formattedDate = Date.replaceAll(" ", "_");
 		return formattedDate;

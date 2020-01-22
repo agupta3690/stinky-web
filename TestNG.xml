@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="BHF Functional Tests">
-
-<listeners>
-		<listener class-name="com.bhf.automation.utils.RetryListenerClass"></listener>
-
-		<listener class-name="com.bhf.automation.listeners.WebEventListener"></listener>
-
-	</listeners>
-
-	<test name="BHF Advisor Login Test" allow-return-values="true">
-		<parameter name="browserName" value="chrome" />
-		<classes>
-		
-		<class
-				name="com.bhf.automation.runner.BHFTestRunner" />
-		
-					
-		</classes>
-
-	</test>
-
-</suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.bhf.automation.runner.TestRunner"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <listeners>
+  <listener class-name="com.bhf.automation.listeners.Listeners"></listener>
+  </listeners>
+  
+</suite> <!-- Suite -->

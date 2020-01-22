@@ -6,6 +6,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.bhf.automation.dataProvider.ConfigFileReader;
 
@@ -49,8 +50,10 @@ public class BHFHeaderNavigation {
 
 	public void VerifyLoginStatus() {
 
-		Assert.assertFalse(GreetingLink.getText().contains("Login"), "Login Failed");
+		SoftAssert assertion = new SoftAssert();
+		assertion.assertFalse(GreetingLink.getText().contains("Login"), "Login Failed");
 		System.out.println("Login Successful!");
+		assertion.assertAll();
 
 	}
 
@@ -63,8 +66,10 @@ public class BHFHeaderNavigation {
 
 	public void VerifyLogoutStatus() {
 
-		Assert.assertTrue(driver.getCurrentUrl().contains("logoff"), "Logout Failed");
+		SoftAssert assertion = new SoftAssert();
+		assertion.assertTrue(driver.getCurrentUrl().contains("logoff"), "Logout Failed");
 		System.out.println("Logout Successful!");
+		assertion.assertAll();
 		
 		
 	}

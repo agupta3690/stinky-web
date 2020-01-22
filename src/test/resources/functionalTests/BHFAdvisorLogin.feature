@@ -1,3 +1,4 @@
+@Functional
 Feature: BHF Advisor Login
 
   
@@ -13,4 +14,4 @@ Feature: BHF Advisor Login
     Examples:
     
     |username|password|
-    |edwardjonestest2|metlife1|
+    |501|metlife1|

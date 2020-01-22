@@ -4,7 +4,6 @@ import com.bhf.automation.cucumber.TestContext;
 import com.bhf.automation.objectRepository.BHFHeaderNavigation;
 import com.cucumber.listener.Reporter;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
