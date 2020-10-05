@@ -1,4 +1,4 @@
-@Functional
+@Functionals
 Feature: BHF Advisor Login
 
   
@@ -15,3 +15,6 @@ Feature: BHF Advisor Login
     
     |username|password|
     |501|metlife1|
+    
+    
+    

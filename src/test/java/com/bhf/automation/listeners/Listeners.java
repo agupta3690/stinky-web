@@ -35,12 +35,12 @@ public class Listeners implements ITestListener{
 
 	public void onTestFailure(ITestResult result) {
 
-		JiraTicketLogger JIM = new JiraTicketLogger();
-		JIM.JiraServiceProvider("https://pranjal-automation.atlassian.net/", "pranjal12december@gmail.com", "4A2nCpnUSMe92zpxt06D311C", "AF");
-		String summary = "The test '"+Hooks.getTestCaseName()+"' has failed.";
-		String description = result.getThrowable().getMessage()+"\n";
-		description.concat(ExceptionUtils.getFullStackTrace(result.getThrowable()));
-		JIM.createJiraIssue("Bug", summary, description,"pranjal12december");
+//		JiraTicketLogger JIM = new JiraTicketLogger();
+//		JIM.JiraServiceProvider("https://pranjal-automation.atlassian.net/", "pranjal12december@gmail.com", "4A2nCpnUSMe92zpxt06D311C", "AF");
+//		String summary = "The test '"+Hooks.getTestCaseName()+"' has failed.";
+//		String description = result.getThrowable().getMessage()+"\n";
+//		description.concat(ExceptionUtils.getFullStackTrace(result.getThrowable()));
+//		JIM.createJiraIssue("Bug", summary, description,"pranjal12december");
 
 	}
 
