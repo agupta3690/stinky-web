@@ -1,14 +1,12 @@
 package com.bhf.automation.objectRepository;
 
+import com.bhf.automation.dataProvider.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-import com.bhf.automation.dataProvider.ConfigFileReader;
 
 
 public class BHFHeaderNavigation {

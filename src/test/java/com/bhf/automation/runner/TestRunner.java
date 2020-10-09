@@ -23,7 +23,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		features = {"src/test/resources/functionalTests"},
 		glue={"com.bhf.automation.stepDefinitions"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:"},
-		tags = {"@Functional"},
+		tags = {"@FormValidation"},
 
 		monochrome = true
 		)
@@ -39,7 +39,8 @@ public class TestRunner{
 	public static void setup() {
 
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
-		filePath = "C:/Users/Arun Gupta/Argil DX LLC/Pulkit Jain - Reports/"+"report_"+configFileReader.getTimeStamp()+".html";
+		String UserPath = configFileReader.getUserDirectory();
+		filePath = UserPath + " - Reports/"+"report_"+configFileReader.getTimeStamp()+".html";
 		extentProperties.setReportPath(filePath);
 		
 	}

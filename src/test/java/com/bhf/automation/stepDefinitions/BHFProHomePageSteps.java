@@ -24,10 +24,9 @@ public class BHFProHomePageSteps {
 
 
 	@Given("^User is on BHF Advisor homepage$")
-	public void User_is_on_BHF_Advisor_homepage(String step) throws Throwable {
+	public void User_is_on_BHF_Advisor_homepage() throws Throwable {
 
 		proHomePage.OpenProHomePage();
-		step = "Open the BHF Pro Home Page";
 		Reporter.addStepLog("Opened the BHF Pro Home Page");
 
 

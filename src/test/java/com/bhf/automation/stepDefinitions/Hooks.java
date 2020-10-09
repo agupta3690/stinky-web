@@ -70,7 +70,9 @@ public class Hooks {
 				//Building up the destination path for the screenshot to save
 				//Also make sure to create a folder 'screenshots' with in the cucumber-report folder
 
-				screenshotFilePath = "C:/Users/Arun Gupta/Argil DX LLC/Pulkit Jain - Reports/Screenshots/"+screenshotName+"_"+configFileReader.getTimeStamp()+".png";
+				String userPath = configFileReader.getUserDirectory();
+
+				screenshotFilePath = userPath +" - Reports/Screenshots/"+screenshotName+"_"+configFileReader.getTimeStamp()+".png";
 
 				File destinationPath = new File(screenshotFilePath);
 

@@ -6,11 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
 
 import com.bhf.automation.enums.DriverType;
 import com.bhf.automation.enums.EnvironmentType;
+import com.codoid.products.exception.FilloException;
+import com.codoid.products.fillo.Connection;
+import com.codoid.products.fillo.Fillo;
+import com.codoid.products.fillo.Recordset;
 
 public class ConfigFileReader {
 
@@ -54,7 +57,7 @@ public class ConfigFileReader {
 	}
 
 	public String getApplicationUrl() {
-		String url = properties.getProperty("publish.pro.dev1");
+		String url = properties.getProperty("publish.pro.testpage.qa2");
 		if(url != null) return url;
 		else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
@@ -89,4 +92,32 @@ public class ConfigFileReader {
 			return true;
 		}
 
+	public String getUserDirectory () {
+		String userDirectory = System.getProperty("user.dir");
+		return userDirectory;
+	}
+
+	public HashMap<String, String> getvaluefromexcel() throws FilloException {
+		String excellocation = properties.getProperty("testdata.file.location");
+		Fillo fillo = new Fillo();
+		Connection connection = fillo.getConnection(excellocation);
+		String strquery = "Select * from Sheet1";
+		HashMap<String,String> map = new HashMap<String, String>();
+		List<String> newlist = new ArrayList<String>();
+		Recordset recordset = connection.executeQuery(strquery);
+		List<String> recordname = recordset.getFieldNames();
+		while(recordset.next()){
+			for (String test : recordname) {
+				String values = recordset.getField(test);
+				newlist.add(values);
+			}
+		}
+		for(int i=0;i<recordname.size();i++){
+			map.put(recordname.get(i), newlist.get(i));
+		}
+		//System.out.println(map);
+		recordset.close();
+		connection.close();
+		return map;
+	}
 	}
