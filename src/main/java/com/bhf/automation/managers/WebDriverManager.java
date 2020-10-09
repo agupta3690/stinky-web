@@ -1,15 +1,13 @@
 package com.bhf.automation.managers;
 
-import java.util.concurrent.TimeUnit;
-
+import com.bhf.automation.enums.DriverType;
+import com.bhf.automation.enums.EnvironmentType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import com.bhf.automation.enums.DriverType;
-import com.bhf.automation.enums.EnvironmentType;
-import cucumber.api.Scenario;
+import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager {
 

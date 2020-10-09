@@ -1,11 +1,8 @@
 package com.bhf.automation.managers;
 
+import com.bhf.automation.objectRepository.*;
+import com.codoid.products.exception.FilloException;
 import org.openqa.selenium.WebDriver;
-
-import com.bhf.automation.objectRepository.BHFHeaderNavigation;
-import com.bhf.automation.objectRepository.BHFMetlifeLoginPage;
-import com.bhf.automation.objectRepository.BHFProHomePage;
-import com.bhf.automation.objectRepository.BHFUserDashboard;
 
 public class PageObjectsManager {
 
@@ -19,6 +16,8 @@ public class PageObjectsManager {
 	private BHFUserDashboard UserDashboard;
 
 	private BHFHeaderNavigation HeaderNavigation;
+
+	private QATestPage qaTestPage;
 
 
 
@@ -54,6 +53,10 @@ public class PageObjectsManager {
 
 		return (HeaderNavigation == null) ? HeaderNavigation = new BHFHeaderNavigation(driver) : HeaderNavigation;
 
+	}
+
+	public QATestPage getQaTestPage() throws FilloException {
+		return (qaTestPage == null) ? qaTestPage = new QATestPage(driver) : qaTestPage;
 	}
 
 
