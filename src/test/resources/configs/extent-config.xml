@@ -11,10 +11,10 @@
     <protocol>https</protocol>
     
     <!-- title of the document -->
-    <documentTitle>The Stinky Framework</documentTitle>
+    <documentTitle>Terumo Demo Framework</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>Stinky Report</reportName>
+    <reportName>Terumo Demo Report</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>
